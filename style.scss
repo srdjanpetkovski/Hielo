@@ -1,0 +1,71 @@
+/***************
+variables
+***************/
+$fontfamily: 'Poppins', sans-serif;
+$font-size: 16px;
+$padding: 100px 0;
+$white: #fff;
+$gray: #dbdbdb;
+$black: #000;
+$borderButton: #b7b7b7;
+$hoverButton: #00c2cf;
+$lineColor: #dbdbdb;
+$transition: .4s ease;
+$transform: scale(1.1);
+
+/***************
+basic styles
+***************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $fontfamily;
+    font-size: $font-size;
+    line-height: 1;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/***************
+mixins
+***************/
+@mixin flex ($justify, $align, $direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin btn {
+    padding: 20px 40px;
+    background: transparent;
+    font-weight: 300;
+    border: 2px solid $borderButton;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: $transition;
+    &:hover {
+        background: $hoverButton;
+    }
+}
+@mixin line {
+    margin: 50px auto;
+    border: none;
+    height: 1px;
+    width: 480px;
+    background: $lineColor;
+}
+
+/***************
+header
+***************/
+header {
+    background-image: url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+}
