@@ -25,10 +25,20 @@ body {
     font-family: $fontfamily;
     font-size: $font-size;
     line-height: 1;
+    color: $white;
+    background: $gray;
 }
 .container {
     width: 80%;
     margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: $hoverButton;
+    transition: $transition;
+    &:hover {
+        color: $white;
+    }
 }
 
 /***************
@@ -65,7 +75,177 @@ mixins
 header
 ***************/
 header {
-    background-image: url(img/header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/header.jpg);
     background-position: center;
     background-size: cover;
+    height: 80vh;
+    @include flex(center, center, column);
+    h4 {
+        font-size: 1.3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $gray;
+        @media (max-width: 767px) {
+            font-size: 1.1rem;
+            padding: 0 55px;
+        }
+    }
+    hr {
+        @include line;
+        @media (max-width: 767px) {
+            width: 40%;
+            margin: 30px auto;
+        }
+    }
+    h1 {
+        font-size: 10rem;
+        font-weight: 300;
+        @media (max-width: 767px) {
+            font-size: 5rem;
+            padding: 0 55px;
+        }
+    }
+}
+
+/***************
+about
+***************/
+.blog {
+    padding: $padding;
+    @include flex(space-between, center, row);
+    article {
+        flex: 0 0 48%;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        img {
+            width: 100%;
+        }
+        div {
+            background: $white;
+            text-align: center;
+            padding: 40px 20px;
+            h5 {
+                font-size: 0.9rem;
+                color: $borderButton;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-weight: 400;
+            }
+            hr {
+                width: 200px;
+                margin: 20px auto;
+                border: none;
+                height: 1px;
+                background: $lineColor;
+            }
+            h2 {
+                font-size: 2rem;
+                font-weight: 300;
+                color: $black;
+            }
+            p {
+                color: $borderButton;
+                line-height: 1.6;
+                margin: 22px 0;
+            }
+            button {
+                @include btn;
+            }
+        }
+    }
+}
+
+/***************
+break
+***************/
+.break {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    @include flex(center, center, column);
+    padding: 80px 0;
+    h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 5px;
+        @media (max-width: 767px) {
+            letter-spacing: 2px;
+            padding-left: 35px;
+        }
+    }
+    hr {
+        margin: 25px auto;
+        width: 45%;
+        border: none;
+        height: 1px;
+        background: $lineColor;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+}
+
+/***************
+gallery
+***************/
+.galleryTitle {
+    padding: $padding;
+    text-align: center;
+    h5 {
+        color: $black;
+        font-weight: 300;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+    h2 {
+        font-weight: 300;
+        font-size: 2rem;
+        margin-top: 50px;
+        color: $black;
+    }
+}
+.gallery {
+    padding-bottom: 100px;
+    @include flex(space-between, center, row);
+    article {
+        flex: 0 0 48%;
+        border: 10px solid $white;
+        margin-bottom: 50px;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/***************
+footer
+***************/
+footer {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: $padding;
+    text-align: center;
+    h3 {
+        font-weight: 300;
+        margin-bottom: 25px;
+    }
+    i {
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: $transition;
+        cursor: pointer;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        &:hover {
+            color: $hoverButton;
+        }
+    }
 }
